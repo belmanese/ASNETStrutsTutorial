@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE application PUBLIC "-//Sun Microsystems, Inc.//DTD J2EE Application 1.2//EN" "http://java.sun.com/j2ee/dtds/application_1_2.dtd">
+<application id="Application_ID">
+	<display-name>ASNETStrutsTutorialEAR</display-name>
+	<module id="WebModule_1270742383859">
+		<web>
+			<web-uri>ASNETStrutsTutorial.war</web-uri>
+			<context-root>ASNETStrutsTutorial</context-root>
+		</web>
+	</module>
+</application>

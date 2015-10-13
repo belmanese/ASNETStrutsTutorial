@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="StrutsProcess">
+ <PROCESS-ITEM NAME="page2" PATH="/views/Welcome.jsp"
+  SHAPE="448,145,0,0" SUBTYPE="jsp" TITLE="Welcome.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/manageOperator.do"
+   SUBTYPE="confirmed" TARGET="action3" TITLE="/manageOperator.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/manageFunctionary.do"
+   SUBTYPE="confirmed" TARGET="action0" TITLE="/manageFunctionary.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="welcome" NAME="forward0" PATH="/Welcome.do"
+  SHAPE="32,161,0,0" TARGET="action1" TITLE="welcome" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#Welcome" NAME="action1" PATH="/Welcome"
+  SHAPE="256,177,0,0" SUBTYPE="parameter" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="action1" PATH="/views/Welcome.jsp"
+   TARGET="page2" TITLE="parameter" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#manageOperator" NAME="action3"
+  PATH="/manageOperator" SHAPE="288,289,0,0" TITLE="operatorFormView"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="readOperatorsForward" NAME="forward0"
+   PATH="/views/operator/manage.jsp" TARGET="page0"
+   TITLE="readOperatorsForward" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="home" NAME="forward1"
+   PATH="/views/Welcome.jsp" TARGET="page2" TITLE="home" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page0" PATH="/views/operator/manage.jsp"
+  SHAPE="496,401,0,0" SUBTYPE="jsp" TITLE="manage.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/manageOperator.do"
+   SUBTYPE="confirmed" TARGET="action3" TITLE="/manageOperator.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/createOperator.do"
+   SUBTYPE="confirmed" TARGET="action2" TITLE="/createOperator.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#createOperator" NAME="action2"
+  PATH="/createOperator" SHAPE="704,401,0,0" TITLE="operatorFormBean"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="home" NAME="forward0"
+   PATH="/views/Welcome.jsp" TARGET="page2" TITLE="home" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="readOperatorsForward" NAME="forward1"
+   PATH="/views/operator/manage.jsp" TARGET="page0"
+   TITLE="readOperatorsForward" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#manageFunctionary" NAME="action0"
+  PATH="/manageFunctionary" SHAPE="656,145,0,0"
+  TITLE="functionaryFormView" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="home" NAME="forward0"
+   PATH="/views/Welcome.jsp" TARGET="page2" TITLE="home" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="readFunctionaryForward" NAME="forward1"
+   PATH="/views/functionary/manage.jsp" TARGET="page1"
+   TITLE="readFunctionaryForward" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page1" PATH="/views/functionary/manage.jsp"
+  SHAPE="864,145,0,0" SUBTYPE="jsp" TITLE="manage.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/manageOperator.do"
+   SUBTYPE="confirmed" TARGET="action3" TITLE="/manageOperator.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/createOperator.do"
+   SUBTYPE="confirmed" TARGET="action2" TITLE="/createOperator.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#createFunctionary" NAME="action4"
+  PATH="/createFunctionary" SHAPE="272,433,0,0"
+  TITLE="functionaryFormBean" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="home" NAME="forward0"
+   PATH="/views/Welcome.jsp" TARGET="page2" TITLE="home" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="readFunctionaryForward" NAME="forward1"
+   PATH="/views/functionary/manage.jsp" TARGET="page1"
+   TITLE="readFunctionaryForward" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+</PROCESS>
