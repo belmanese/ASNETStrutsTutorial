@@ -10,34 +10,29 @@
 		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
 	</head>
 	<body bgcolor="white">
-	 	<!-- CREATE OPERATOR -->
-		<!-- <html:form action="createOperator">
+	 	<!-- CREATE FUNCTIONARY -->
+		 <html:form action="createFunctionary">
 			<table border="1">
 				<tr>
-					<td><bean:message key="operators.title.name" /></td>
+					<td><bean:message key="functionary.title.name" /></td>
 					<td><html:text property="name" /></td>
 				</tr>
 				<tr>
-					<td><bean:message key="operators.title.localMinute" /></td>
-					<td><html:text property="localMinute" /></td>
-				</tr>
+					<td><bean:message key="functionary.title.salary" /></td>
+					<td><html:text property="salary" /></td>
+				</tr>				
 				<tr>
-					<td><bean:message key="operators.title.internationalMinute" /></td>
-					<td><html:text property="internationalMinute" /></td>
-				</tr>
-				<tr>
-					<td><bean:message key="operators.title.status" /></td>
+					<td><bean:message key="functionary.title.department.name" /></td>
 					<td>
-							<html:select property="status">
-								<html:option value="true">true</html:option>
-								<html:option value="false">false</html:option>
-							</html:select>
+						<html:select name="functionaryFormBean" property="id">
+							<html:optionsCollection name="functionaryFormView" property="departmentList" label="name" value="id" />
+						</html:select>
 					</td>
 				</tr>
 			</table>
-			<br/><html:submit property="manage" value="create" onclick="cleanOperators()" /><br/>
-		</html:form>-->
-		<!-- LIST OF OPERATORS FOR UPDATE OR DELETE -->
+			<br/><html:submit property="manage" value="create" /><br/>
+		</html:form>
+		<!-- LIST OF FUNCTIONARIES FOR UPDATE OR DELETE -->
 		<html:form action="manageFunctionary">
 			<table border="1">
 				<tr>
@@ -56,12 +51,15 @@
 						String id = nest + "id";
 						String name = nest + "name";
 						String salary = nest + "salary";
-						String department = nest + "department.name";
+						String department = nest + "department.id";
 						%>
 						<td><html:text disabled="true" property="<%=id%>" /></td>
 						<td><html:text property="<%=name%>" /></td>
-						<td><html:text property="<%=salary%>" /></td>
-						<td><html:text property="<%=department%>" /></td>
+						<td><html:text property="<%=salary%>" /></td><td>
+							<html:select property="<%=department%>">
+								<html:optionsCollection name="functionaryFormView" property="departmentList" label="name" value="id" />
+							</html:select>
+						</td>
 						<td><html:checkbox property="<%=checked%>" /></td>
 					</tr>
 				</logic:iterate>
@@ -69,13 +67,13 @@
 			<br/>		
 			<html:submit property="manage" value="update" />
 			<html:submit property="manage" value="delete" />
-			<html:submit property="manage" value="home" />
+			<html:submit property="manage" value="home" />     
 		</html:form>
 	</body>
 	<script>
-		function cleanOperators() {
-			$('form[name="OperatorDispatchForm"]').attr("action", "/manageOperator?manage=read");
-			$('form[name="OperatorDispatchForm"]').submit();
+		function cleanFunctionary() {
+			$('form[name="functionaryFormBean"]').attr("action", "/manageFunctionary?manage=read");
+			$('form[name="functionaryFormBean"]').submit();
 		}
 	</script>
 </html:html>

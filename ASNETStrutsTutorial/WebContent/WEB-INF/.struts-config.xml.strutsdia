@@ -54,11 +54,11 @@
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="page1" PATH="/views/functionary/manage.jsp"
   SHAPE="864,145,0,0" SUBTYPE="jsp" TITLE="manage.jsp" TYPE="page" model-entity="StrutsProcessItem">
-  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/manageOperator.do"
-   SUBTYPE="confirmed" TARGET="action3" TITLE="/manageOperator.do"
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/manageFunctionary.do"
+   SUBTYPE="confirmed" TARGET="action0" TITLE="/manageFunctionary.do"
    TYPE="link" model-entity="StrutsProcessItemOutput"/>
-  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/createOperator.do"
-   SUBTYPE="confirmed" TARGET="action2" TITLE="/createOperator.do"
+  <PROCESS-ITEM-OUTPUT NAME="link1" PATH="/createFunctionary.do"
+   SUBTYPE="confirmed" TARGET="action4" TITLE="/createFunctionary.do"
    TYPE="link" model-entity="StrutsProcessItemOutput"/>
  </PROCESS-ITEM>
  <PROCESS-ITEM ID="#createFunctionary" NAME="action4"

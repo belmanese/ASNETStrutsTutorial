@@ -18,6 +18,7 @@ public class FunctionaryFormView extends ActionForm {
 
 	private static final long serialVersionUID = 1L;
 	private FunctionaryListItem[] functionaryListItems= new FunctionaryListItem[0];
+	private List<DepartmentFormBean> departmentList;
 
 	public FunctionaryFormView() { }
 
@@ -36,8 +37,14 @@ public class FunctionaryFormView extends ActionForm {
 	}
 	public void setFunctionaryListItems(Integer index, FunctionaryListItem functionaryListItems) {
 		this.functionaryListItems[index] = functionaryListItems;
-	}	
-	
+	}		
+	public List<DepartmentFormBean> getDepartmentList() {
+		return departmentList;
+	}
+	public void setDepartmentList(List<DepartmentFormBean> departmentList) {
+		this.departmentList = departmentList;
+	}
+
 	public void reset(ActionMapping mapping, HttpServletRequest request) {
 		if ("submit".equals(mapping.getParameter())) 
 			for (int i = 0; i < functionaryListItems.length; i++) 
