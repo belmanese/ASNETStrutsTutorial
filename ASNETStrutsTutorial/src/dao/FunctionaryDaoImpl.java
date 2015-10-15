@@ -16,7 +16,7 @@ import model.FunctionaryFormBean;
 public class FunctionaryDaoImpl implements FunctionaryDao {
 
 	public void create(FunctionaryFormBean functionary) {
-		String sql = "INSERT INTO funtionary (name, salary, department) VALUES ('"+functionary.getName()+"', "+functionary.getSalary()+", "+functionary.getDepartment().getId()+")";
+		String sql = "INSERT INTO funtionary (name, salary, department_ID) VALUES ('"+functionary.getName()+"', "+functionary.getSalary()+", "+functionary.getDepartment().getId()+")";
 		MysqlConnect.create(sql);
 	}
 
@@ -29,9 +29,9 @@ public class FunctionaryDaoImpl implements FunctionaryDao {
 		String id = functionary.getId().toString();
 		String name = functionary.getName();
 		String salary = functionary.getSalary().toString();
-		String department = functionary.getDepartment().getId().toString();
+		String department_ID = functionary.getDepartment().getId().toString();
 		
-		String sql = "UPDATE funtionary SET name='" + name + "', salary=" + salary + ", department=" + department + " WHERE id=" + id;
+		String sql = "UPDATE funtionary SET name='" + name + "', salary=" + salary + ", department_ID=" + department_ID + " WHERE id=" + id;
 		MysqlConnect.update(sql);
 		
 	}
@@ -53,7 +53,7 @@ public class FunctionaryDaoImpl implements FunctionaryDao {
 		
 	    while(iterator.hasNext()) {
 	        DynaBean bean = (DynaBean)iterator.next();
-	        DepartmentFormBean department = new DepartmentDaoImpl().read(Long.parseLong(bean.get("department").toString()));
+	        DepartmentFormBean department = new DepartmentDaoImpl().read(Long.parseLong(bean.get("department_id").toString()));
 	        functionaries.add(
 	            new FunctionaryFormBean(
 		            Long.parseLong(bean.get("id").toString()), 

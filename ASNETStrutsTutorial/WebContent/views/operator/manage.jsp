@@ -7,12 +7,13 @@
 	<head>
 		<title><bean:message key="operator.update.title"/></title>
 		<html:base/>
-		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
+		<link href="views/resources/css/styles.css" rel="stylesheet" type="text/css"/>	
 	</head>
 	<body bgcolor="white">
+		<h1 style="text-align:center;">GESTION DE OPERADORES</h1>
 	 	<!-- CREATE OPERATOR -->
-		<html:form action="createOperator">
-			<table border="1">
+		<html:form action="create_operator">
+			<table border="1" style="margin: 0 auto;">
 				<tr>
 					<td><bean:message key="operators.title.name" /></td>
 					<td><html:text property="name" /></td>
@@ -35,18 +36,21 @@
 					</td>
 				</tr>
 			</table>
-			<br/><html:submit property="manage" value="create" onclick="cleanOperators()" /><br/>
+			<br/>
+			<center>
+				<html:submit property="manage" value="create" onclick="cleanOperators()" /><br/>
+			</center>
 		</html:form>
 		<!-- LIST OF OPERATORS FOR UPDATE OR DELETE -->
-		<html:form action="manageOperator">
-			<table border="1">
+		<html:form action="manage_operator">
+			<table border="1" style="margin: 0 auto;">
 				<tr>
-					<th><bean:message key="operators.title.id"/></th>
-					<th><bean:message key="operators.title.name"/></th>
-					<th><bean:message key="operators.title.localMinute"/></th>
-					<th><bean:message key="operators.title.internationalMinute"/></th>
-					<th><bean:message key="operators.title.status"/></th>
-					<th><bean:message key="manage.title.action"/></th>
+					<th class="cell-padding"><bean:message key="operators.title.id"/></th>
+					<th class="cell-padding"><bean:message key="operators.title.name"/></th>
+					<th class="cell-padding"><bean:message key="operators.title.localMinute"/></th>
+					<th class="cell-padding"><bean:message key="operators.title.internationalMinute"/></th>
+					<th class="cell-padding"><bean:message key="operators.title.status"/></th>
+					<th class="cell-padding"><bean:message key="manage.title.action"/></th>
 				</tr>
 				<logic:iterate id="lineItem" indexId="index" name="operatorFormView" property="operatorListItems">
 					<tr>
@@ -60,24 +64,26 @@
 						String internationalMinute = nest + "internationalMinute";
 						String status = nest + "status";
 						%>
-						<td><html:text disabled="true" property="<%=id%>" /></td>
-						<td><html:text property="<%=name%>" /></td>
-						<td><html:text property="<%=localMinute%>" /></td>
-						<td><html:text property="<%=internationalMinute%>" /></td>
-						<td>
+						<td class="cell-padding"><html:text disabled="true" property="<%=id%>" /></td>
+						<td class="cell-padding"><html:text property="<%=name%>" /></td>
+						<td class="cell-padding"><html:text property="<%=localMinute%>" /></td>
+						<td class="cell-padding"><html:text property="<%=internationalMinute%>" /></td>
+						<td class="cell-padding">
 							<html:select property="<%=status%>">
 								<html:option value="true">true</html:option>
 								<html:option value="false">false</html:option>
 							</html:select>
 						</td>
-						<td><html:checkbox property="<%=checked%>" /></td>
+						<td class="cell-padding"><html:checkbox property="<%=checked%>" /></td>
 					</tr>
 				</logic:iterate>
 			</table>
-			<br/>		
-			<html:submit property="manage" value="update" />
-			<html:submit property="manage" value="delete" />
-			<html:submit property="manage" value="home" />
+			<br/>
+			<center>
+				<html:submit property="manage" value="update" />
+				<html:submit property="manage" value="delete" />
+				<html:submit property="manage" value="home" />
+			</center>		
 		</html:form>
 	</body>
 	<script>

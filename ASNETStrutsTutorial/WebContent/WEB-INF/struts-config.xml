@@ -46,6 +46,7 @@
 	   <form-bean name="operatorFormBean" type="model.OperatorFormBean" />
 	   <form-bean name="functionaryFormView" type="model.FunctionaryFormView" />
 	   <form-bean name="functionaryFormBean" type="model.FunctionaryFormBean" />
+	   <form-bean name="reportFormView" type="model.ReportFormView" />
 	    <!-- sample form bean descriptor for a DynaActionForm
 	        <form-bean
 	            name="logonForm"
@@ -81,9 +82,9 @@
             path="/Welcome"
             type="org.apache.struts.actions.ForwardAction"
             parameter="/views/Welcome.jsp"/>  
-		<!-- ++++++++++++++++++++ Operators ++++++++++++++++++++ -->
+		<!-- ++++++++++++++++++++ OPERATORS ++++++++++++++++++++ -->
 		<action 
-			path="/manageOperator"
+			path="/manage_operator"
 			type="controller.OperatorDispatcherController"
 			parameter="manage"
 			name="operatorFormView"	validate="false" >
@@ -91,16 +92,16 @@
 			<forward name="home" path="/views/Welcome.jsp" />
 		</action> 
 		<action 
-			path="/createOperator"
+			path="/create_operator"
 			type="controller.OperatorDispatcherController"
 			parameter="manage"
 			name="operatorFormBean"	validate="false" >
 			<forward name="readOperatorsForward" path="/views/operator/manage.jsp"  />
 			<forward name="home" path="/views/Welcome.jsp" />
 		</action> 
-		<!-- ++++++++++++++++++++ functionaries ++++++++++++++++++++ -->
+		<!-- ++++++++++++++++++++ FUNCTIONARIES ++++++++++++++++++++ -->
 		<action 
-			path="/manageFunctionary"
+			path="/manage_functionary"
 			type="controller.FunctionaryDispatcherController"
 			parameter="manage"
 			name="functionaryFormView"	validate="false" >
@@ -108,11 +109,20 @@
 			<forward name="home" path="/views/Welcome.jsp" />
 		</action> 
 		<action 
-			path="/createFunctionary"
+			path="/create_functionary"
 			type="controller.FunctionaryDispatcherController"
 			parameter="manage"
 			name="functionaryFormBean"	validate="false" >
 			<forward name="readFunctionaryForward" path="/views/functionary/manage.jsp"  />
+			<forward name="home" path="/views/Welcome.jsp" />
+		</action> 
+		<!-- ++++++++++++++++++++ REPORTS ++++++++++++++++++++ -->
+		<action 
+			path="/manage_report"
+			type="controller.ReportDispatcherController"
+			parameter="manage"
+			name="reportFormView"	validate="false" >
+			<forward name="readReportForward" path="/views/report/manage.jsp"  />
 			<forward name="home" path="/views/Welcome.jsp" />
 		</action> 
     </action-mappings>

@@ -1,0 +1,11 @@
+@CHARSET "ISO-8859-1";
+.center-table {
+	margin: 0 auto;
+}
+.cell-padding {
+	padding: 5px 10px;
+}
+.center-div {
+	border:1px black solid;
+	position:absolute;
+}

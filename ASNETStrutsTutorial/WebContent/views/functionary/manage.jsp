@@ -1,18 +1,18 @@
 <%@ taglib uri="/tags/struts-bean" prefix="bean" %>
 <%@ taglib uri="/tags/struts-html" prefix="html" %>
 <%@ taglib uri="/tags/struts-logic" prefix="logic" %>
-<meta http-equiv="refresh" content="300;url=manageOperator.action" />
 
 <html:html locale="true">
 	<head>
 		<title><bean:message key="functionary.update.title"/></title>
+		<link href="views/resources/css/styles.css" rel="stylesheet" type="text/css"/>	
 		<html:base/>
-		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
 	</head>
 	<body bgcolor="white">
+		<h1 style="text-align:center;">GESTION DE FUNCIONARIOS</h1>
 	 	<!-- CREATE FUNCTIONARY -->
-		 <html:form action="createFunctionary">
-			<table border="1">
+		 <html:form action="create_functionary">
+			<table border="1" style="margin: 0 auto;">
 				<tr>
 					<td><bean:message key="functionary.title.name" /></td>
 					<td><html:text property="name" /></td>
@@ -29,18 +29,20 @@
 						</html:select>
 					</td>
 				</tr>
-			</table>
-			<br/><html:submit property="manage" value="create" /><br/>
+			</table><br/>
+			<center>
+				<html:submit property="manage" value="create" /><br/>
+			</center>
 		</html:form>
 		<!-- LIST OF FUNCTIONARIES FOR UPDATE OR DELETE -->
-		<html:form action="manageFunctionary">
-			<table border="1">
+		<html:form action="manage_functionary">
+			<table border="1" class="center-table">
 				<tr>
-					<th><bean:message key="functionary.title.id"/></th>
-					<th><bean:message key="functionary.title.name"/></th>
-					<th><bean:message key="functionary.title.salary"/></th>
-					<th><bean:message key="functionary.title.department.name"/></th>
-					<th><bean:message key="manage.title.action"/></th>
+					<th class="cell-padding"><bean:message key="functionary.title.id"/></th>
+					<th class="cell-padding"><bean:message key="functionary.title.name"/></th>
+					<th class="cell-padding"><bean:message key="functionary.title.salary"/></th>
+					<th class="cell-padding"><bean:message key="functionary.title.department.name"/></th>
+					<th class="cell-padding"><bean:message key="manage.title.action"/></th>
 				</tr>
 				<logic:iterate id="lineItem" indexId="index" name="functionaryFormView" property="functionaryListItems">
 					<tr>
@@ -60,14 +62,15 @@
 								<html:optionsCollection name="functionaryFormView" property="departmentList" label="name" value="id" />
 							</html:select>
 						</td>
-						<td><html:checkbox property="<%=checked%>" /></td>
+						<td class="cell-padding"><html:checkbox property="<%=checked%>" /></td>
 					</tr>
 				</logic:iterate>
-			</table>
-			<br/>		
-			<html:submit property="manage" value="update" />
-			<html:submit property="manage" value="delete" />
-			<html:submit property="manage" value="home" />     
+			</table><br/>
+			<center>
+				<html:submit property="manage" value="update" />
+				<html:submit property="manage" value="delete" />
+				<html:submit property="manage" value="home" />
+			</center>		     
 		</html:form>
 	</body>
 	<script>
