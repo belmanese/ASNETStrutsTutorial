@@ -27,7 +27,7 @@ public class ReportService {
 					"inner join bd_test_1.call c on o.id = c.operator_id " +
 					"inner join bd_test_1.liquidation l on c.liquidation_id = l.id " +
 					"inner join bd_test_1.funtionary f on l.funtionary_id = f.id " +
-					"inner join bd_test_1.department d on f.department_id = d.id; ";
+					"inner join bd_test_1.department d on f.department_id = d.id";
 			
 		List<ReportFormListItem> reportsFormList = new ArrayList<ReportFormListItem>();
 		
